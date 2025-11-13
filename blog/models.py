@@ -17,8 +17,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-    field_2 = models.IntegerField(default=42)
-    field_3 = models.CharField(null=True)
+    
     class Meta:
         ordering = ["-created_on"]
     
@@ -34,10 +33,11 @@ class Comment(models.Model):
         User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
     approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)    
+    created_on = models.DateTimeField(auto_now_add=True)  
+    new_field = models.SlugField(blank=True, null=True)  
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["created_on"]
 
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
