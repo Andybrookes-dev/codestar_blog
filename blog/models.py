@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
+
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -15,7 +17,8 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
-
+    field_2 = models.IntegerField(default=42)
+    field_3 = models.CharField(null=True)
     class Meta:
         ordering = ["-created_on"]
     
