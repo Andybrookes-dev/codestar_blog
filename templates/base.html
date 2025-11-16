@@ -63,10 +63,10 @@
                             <a
                                 class="nav-link {% if request.path == home_url %}active{% endif %}"
                                 aria-current="page"
-                                href="#"
-                                >Home</a
-                            >
+                                href="{% url 'home' %}"
+                                >Home</a>
                         </li>
+                        
                     </ul>
                     <span class="navbar-text text-muted">
                         adventures of a software developer
@@ -84,8 +84,7 @@
         <!-- Footer -->
         <footer class="footer mt-auto py-3 dark-bg">
             <p class="m-0 text-center text-white">
-                {% block copyright %}Made by Code Instituters{% endblock
-                copyright %}
+            {% block copyright %}Made by Code Instituters{% endblock copyright %}
             </p>
             <p class="m-0 text-center text-white">
                 Follow us: <i class="fab fa-facebook-square ms-3"></i>
