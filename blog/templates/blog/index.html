@@ -26,8 +26,9 @@
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
+                                <p class="card-text">{{ post.excerpt }}</p>
                             </a>
-                            <p class="card-text">{{ post.excerpt }}</p>
+
                             <hr />
                             <p class="card-text text-muted h6">{{ post.created_on}}
                             </p>
@@ -59,7 +60,4 @@
 
 <!-- index.html content ends here -->
 {% endblock %}
-
-{% block copyright %}
-Copyright Andy Brookes 2025
-{% endblock %}
+{% block copyright %}Copyright Andy Brookes 2025{% endblock %}
