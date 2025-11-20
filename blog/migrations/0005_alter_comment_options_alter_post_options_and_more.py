@@ -26,6 +26,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='post',
             name='field_3',
-            field=models.CharField(null=True),
+            field=models.CharField(null=True, max_length=255),
         ),
     ]
